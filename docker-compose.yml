@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: marketing_analytics_postgres
+    environment:
+      POSTGRES_DB: roas
+      POSTGRES_USER: roas
+      POSTGRES_PASSWORD: roas
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql:/sql
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
